@@ -1,0 +1,76 @@
+.wrapper {
+    min-height: 100vh;
+    padding: 30px;
+    margin: auto;
+    width: 90%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-content: flex-start;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 12px;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 15px #e9531c, 0 0 5px #0004;
+    position: relative;
+}
+
+.card .like {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    font-size: 1.3rem;
+    color: #df3c00;
+    cursor: pointer;
+}
+
+.like:hover {
+    transform: scale(1.1, 1.1);
+
+}
+
+.card-trash {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    font-size: 1.3rem;
+    color: #df3c0085;
+    cursor: pointer;
+}
+
+.card-trash:hover, .card-edit:hover {
+    color: #df3c00;
+    transform: scale(1.1, 1.1);
+
+}
+
+.card-edit{
+    position: absolute;
+    left: 34px;
+    bottom: 8px;
+    font-size: 1.3rem;
+    color: #df3c0085;
+    cursor: pointer;
+}
+
+.card .pic {
+    height: 300px;
+    width: 100%;
+    background-color:  #fff;
+    background-image: url(https://www.kinometro.ru/res/pic/data/news/9580.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+.pic.tmp {
+    background-image: url(img/Три\ кота_default.png);
+    background-size: contain;
+}

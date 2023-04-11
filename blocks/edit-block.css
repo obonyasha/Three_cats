@@ -1,0 +1,41 @@
+.edit-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 10;
+    border-radius: 50%
+}
+
+.edit-block {
+    display: none;
+    background-color: rgba(234, 243, 180, 0.808);
+    backdrop-filter: blur(1px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit-block.active {
+    display: flex;
+}
+
+.edit {
+    position: relative;
+    background-color: #f7c554;
+    padding: 16px;
+    border-radius: 8px;
+    width: calc(100% - 100px);
+    max-width: 300px;
+    max-height: calc(100%-100px);
+    overflow: auto;
+}
+
+.edit h2 {
+    margin-bottom: 16px;
+}
+

@@ -1,0 +1,102 @@
+form {
+    display: grid;
+    gap: 16px;
+}
+
+.form-group {
+    display: grid;
+    gap: 6px;
+}
+
+.form-submit {
+    background-color:#0a59e9c2;
+    border: none;
+    outline: none;
+    color: #fff;
+    height: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    font: inherit;
+    padding: 0 12px;
+}
+
+.form-submit:hover {
+    background-color: rgb(42, 45, 230);
+}
+
+
+input:note([type="checkbox"]) {
+    width: 100%;
+    box-sizing: border-box;
+    height: 30px;
+}
+
+input,
+textarea {
+    outline: none;
+    border: 1px solid rgb(42, 45, 230);
+    padding: 6px 8px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    width: 100%;
+    font: inherit;
+}
+
+label {
+    cursor: pointer;
+    user-select: none;
+    font-weight: 500;
+}
+
+.form-group-item {
+    position: relative;
+    display: grid;
+    gap: 6px;
+    grid-template-columns: 10% 90%;
+}
+
+input[type="checkbox"] {
+    visibility: hidden;
+}
+
+input[type="checkbox"]+label {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    margin-left: 25px;
+}
+
+input[type="checkbox"]+label:before {
+    /* font-family: "Font Awesome 6 Free";
+    content: "\f004"; */
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    /* border: 1px solid rgb(42, 45, 230); */
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    cursor: pointer;
+    background-image: url('/img/free-icon-heart-shape-outline-25424.png');
+    background-size: contain;
+    /* background-repeat: no-repeat; */
+    /* background-position: -38px -260px; */
+}
+
+input[type="checkbox"]:checked+label:before {
+    background-image: url('/img/icons8-красное-сердце-48.png');
+    background-repeat: no-repeat;
+    /* background-position: -38px -260px;    */
+}
+
+.preview {
+    height: 200px;
+    background-color: #0a59e9c2;
+    border-radius: 8px;
+    background-image: url("/img/Три\ кота_default.png");
+    background-position: center;
+    background-size: cover;
+}

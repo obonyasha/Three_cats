@@ -14,7 +14,7 @@ function createCard(pet, tag) {
 
     const caredTitle = document.createElement("h2");
     caredTitle.innerText = pet.name;
-    caredTitle.style.color = "rgba(17, 165, 25, 0.945)";
+    caredTitle.style.color = "#8B2504";
 
     const cardLike = document.createElement("i");
     cardLike.className = "like fa-heart";
@@ -30,7 +30,13 @@ function createCard(pet, tag) {
         deleteCard(pet.id, e.currentTarget.parentElement);
     });
 
-    card.append(cardImg, caredTitle, cardLike, trash);
+    const edit = document.createElement("i");
+    edit.className = "fa-solid fa-pen-to-square card-edit";
+    edit.addEventListener("click", e => {
+        editBox.classList.toggle("active");
+    });
+
+    card.append(cardImg, caredTitle, cardLike, trash, edit);
 
     // card.addEventListener("click", (event) => {
     //     deleteCard(pet.id, card)

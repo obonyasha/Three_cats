@@ -83,7 +83,7 @@ mdBox.addEventListener("click", e => {
         mdBox.classList.remove("active")
     }
 });
-//Обновление картинки в формедобавления кота после ввода ссылки 
+//Обновление картинки в форме добавления кота после ввода ссылки 
 addForm.elements.image.addEventListener("change", e => {
 
     prevTag.style.backgroundImage = `url(${e.currentTarget.value})`;
@@ -125,3 +125,14 @@ addForm.addEventListener("submit", e => {
                 })
         })
 })
+
+//Изменение свойств header  при использовании скролл
+
+function updateScroll() {
+    if (window.scrollY > 0) {
+        document.querySelector(".header").classList.add("header__scrolled");
+    } else {
+        document.querySelector(".header").classList.remove("header__scrolled");
+    }
+}
+// window.addEventListener("scroll", updateScroll);
