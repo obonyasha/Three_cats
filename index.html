@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cats</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <button class="add btn">
+        <i class="fa-solid fa-plus"></i>
+    </button>
+    <div class="wrapper"></div>
+    <div class="modal-block">
+        <div class="modal">
+            <button class="modal-close btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h2>Добавить котика</h2>
+            <form name="add">
+                <div class="form-group form-2">
+                    <label for="name">Имя</label>
+                    <input type="text" placeholder="Коржик" id="name" name="name">
+                </div>
+                <div class="form-group form-3">
+                    <label for="image">Изображение</label>
+                    <input type="text" placeholder="Ссылка на изобажение" id="image" name="image">
+                </div>
+                <div class="preview  form-3"></div>
+                <div class="form-group form-2">
+                    <label for="age">Возраст</label>
+                    <input type="number" placeholder="4" min="1" id="age" name="age">
+                </div>
+                <div class="form-group-item">
+                   <input type="checkbox" id="favorite" name="favorite"> 
+                   <label>
+                        Любимчик
+                    </label>
+                    
+                </div>
+                <button type="submit" class="form-submit">Добавить</button>
+            </form>
+        </div>
+    </div>
+    <script src="js/functions.js"></script>
+    <script src="js/global.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

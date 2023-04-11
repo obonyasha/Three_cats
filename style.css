@@ -1,0 +1,249 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+}
+
+
+h2 {
+    margin: 0;
+}
+
+.wrapper {
+    min-height: 100vh;
+    /* background-color: beige; */
+    padding: 30px;
+    margin: auto;
+    max-width: 1020px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    align-content: flex-start;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 12px;
+    align-items: center;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(61, 218, 69, 0.945), 0 0 5px #0004;
+    position: relative;
+}
+
+.card .like {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    font-size: 1.3rem;
+    color: blueviolet;
+    cursor: pointer;
+}
+
+.like:hover {
+    transform: scale(1.1, 1.1);
+
+}
+
+.card-trash {
+    position: absolute;
+    left: 8px;
+    bottom: 8px;
+    font-size: 1.3rem;
+    color: rgba(137, 43, 226, 0.582);
+    cursor: pointer;
+}
+
+.card-trash:hover {
+    color: blueviolet;
+    transform: scale(1.1, 1.1);
+
+}
+
+.card .pic {
+    height: 200px;
+    width: 100%;
+    background-color: rgba(61, 218, 69, 0.945);
+    background-image: url(https://www.kinometro.ru/res/pic/data/news/9580.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+
+.pic.tmp {
+    background-image: url(img/Три\ кота_default.png);
+    background-size: contain;
+}
+
+.btn {
+    outline: none;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: blueviolet;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    color: springgreen;
+    transform: scale(1.1, 1.1);
+}
+
+.add {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.modal-close {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 10;
+}
+
+.modal-block {
+    display: none;
+    background-color: rgba(234, 243, 180, 0.808);
+    backdrop-filter: blur(1px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-block.active {
+    display: flex;
+}
+
+.modal {
+    position: relative;
+    background-color: #fff;
+    padding: 16px;
+    border-radius: 8px;
+    width: calc(100% - 100px);
+    max-width: 300px;
+    max-height: calc(100%-100px);
+    overflow: auto;
+}
+
+.modal h2 {
+    color: blueviolet;
+    margin-bottom: 16px;
+}
+
+form {
+    display: grid;
+    /* grid-template-columns: repeat(1, 1fr) auto; */
+    gap: 16px;
+}
+
+.form-group {
+    display: grid;
+    gap: 6px;
+}
+
+
+
+/* .form-2{
+    grid-column-end: span 2;
+}
+
+.form-3{
+    grid-column-end: span 3;
+} */
+
+.form-submit {
+    /* grid-column-start: 3; */
+    background-color: rgb(137, 43, 226, 0.582);
+    border: none;
+    outline: none;
+    color: #fff;
+    height: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    font: inherit;
+    padding: 0 12px;
+}
+
+.form-submit:hover {
+    background-color: blueviolet;
+}
+
+[type="checkbox"] {
+    visibility: hidden;
+}
+
+input:note([type="checkbox"]) {
+    width: 100%;
+    box-sizing: border-box;
+    height: 30px;
+}
+
+input,
+textarea {
+    outline: none;
+    border: 1px solid blueviolet;
+    padding: 6px 8px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    width: 100%;
+    font: inherit;
+}
+
+label {
+    cursor: pointer;
+    user-select: none;
+}
+
+.form-group-item {
+    position: relative;
+    display: grid;
+    gap: 6px;
+    grid-template-columns: 10% 90%;
+}
+
+[type="checkbox"]+label {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+[type="checkbox"]+label:before {
+    font-family: "Font Awesome 6 Free";
+    content: "\f004";
+    display: flex;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: 1px solid blueviolet;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    left: 0;
+    cursor: pointer;
+}
+
+[type="checkbox"]:checked+label:before {
+    color: blueviolet;
+    font-weight: 900;
+}
+
+.preview {
+    height: 200px;
+    background-color: rgb(124, 223, 157);
+    border-radius: 8px;
+    background-image: url("img/Три\ кота_default.png");
+    background-position: center;
+    background-size: cover;
+}
