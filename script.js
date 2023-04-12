@@ -85,7 +85,6 @@ mdBox.addEventListener("click", e => {
 });
 //Обновление картинки в форме добавления кота после ввода ссылки 
 addForm.elements.image.addEventListener("change", e => {
-
     prevTag.style.backgroundImage = `url(${e.currentTarget.value})`;
 })
 //Добавление кота через форму в модальном окне и отправка его на сервер, обновление данных в локальном хранилище
@@ -136,3 +135,14 @@ function updateScroll() {
     }
 }
 // window.addEventListener("scroll", updateScroll);
+
+//Закрытие модального окна(окно изменения/просмотра инф о коте) через кнопку close
+editClose.addEventListener("click", e => {
+    editBox.classList.remove("active");
+})
+//Закрытие модального окна(окно изменения/просмотра инф о коте) при нажатии на любую область
+editBox.addEventListener("click", e => {
+    if (e.target === e.currentTarget) {
+        editBox.classList.remove("active")
+    }
+});

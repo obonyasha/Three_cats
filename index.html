@@ -15,13 +15,13 @@
 <body>
     <div class="page">
         <header class="header">
-            <img src="/img/Tri-Kota-Logo.png" class="header-logo" alt="три кота">
-                <button class="add-cat btn">
-                    Добавить кота
-                </button>
+            <img src="img/Tri-Kota-Logo.png" class="header-logo" alt="три кота">
+            <button class="add-cat btn">
+                Добавить кота
+            </button>
         </header>
         <main>
-            <div class="wrapper"></div>
+            <div class="cards-block"></div>
             <div class="modal-block">
                 <div class="modal">
                     <button class="modal-close btn">
@@ -40,13 +40,14 @@
                         <div class="preview"></div>
                         <div class="form-group">
                             <label for="age">Возраст</label>
-                            <input type="number" placeholder="4" min="1" id="age" name="age">
+                            <input type="number" placeholder="" min="1" id="age" name="age">
                         </div>
-                        <div class="form-group-item">
-                            <input type="checkbox" id="favorite" name="favorite"  checked hidden>
-                            <label>
-                                Любимчик
-                            </label>
+                        <input type="checkbox" id="favorite" name="favorite">
+                        <label for="favorite" class="custom-checkbox">Любимчик</label>
+                        <div class="form-group">
+                            <label for="info">О котике</label>
+                            <textarea type="text" placeholder="Описание" id="info" name="info"
+                                class="form-text"></textarea>
                         </div>
                         <button type="submit" class="form-submit">Добавить</button>
                     </form>
@@ -70,22 +71,23 @@
                         <div class="preview"></div>
                         <div class="form-group">
                             <label for="age">Возраст</label>
-                            <input type="number" placeholder="4" min="1" id="age" name="age">
+                            <input type="number" placeholder="" min="1" id="age" name="age">
                         </div>
-                        <div class="form-group-item">
-                            <input type="checkbox" id="favorite" name="favorite"  checked hidden>
-                            <label>
-                                Любимчик
-                            </label>
+                        <input type="checkbox" id="favorite" name="favorite" checked hidden>
+                        <label for="favorite" class="custom-checkbox">
+                            Любимчик
+                        </label>
+                        <div class="form-group">
+                            <label for="info">О котике</label>
+                            <textarea type="text" placeholder="Описание" id="info" name="info"
+                                class="form-text"></textarea>
                         </div>
-                        <button type="submit" class="form-submit">Добавить</button>
+                        <button type="submit" class="form-submit">Изменить</button>
                     </form>
                 </div>
             </div>
         </main>
     </div>
-
-
     <script src="js/functions.js"></script>
     <script src="js/global.js"></script>
     <script src="script.js"></script>

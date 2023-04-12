@@ -12,9 +12,13 @@ function createCard(pet, tag) {
         cardImg.classList.add("tmp");
     }
 
-    const caredTitle = document.createElement("h2");
-    caredTitle.innerText = pet.name;
-    caredTitle.style.color = "#8B2504";
+    const cardTitle = document.createElement("h2");
+    cardTitle.innerText = pet.name;
+    cardTitle.style.color = "#034ff9";
+
+    const cardAge = document.createElement("p");
+    cardAge.className = "cat-age";
+    cardAge.innerText = pet.age ? textAge(pet.age) : '';
 
     const cardLike = document.createElement("i");
     cardLike.className = "like fa-heart";
@@ -34,9 +38,10 @@ function createCard(pet, tag) {
     edit.className = "fa-solid fa-pen-to-square card-edit";
     edit.addEventListener("click", e => {
         editBox.classList.toggle("active");
+        openCard(cardTitle, pet.image, pet.age, pet.info, pet);
     });
 
-    card.append(cardImg, caredTitle, cardLike, trash, edit);
+    card.append(cardImg, cardTitle, cardLike, trash, edit, cardAge);
 
     // card.addEventListener("click", (event) => {
     //     deleteCard(pet.id, card)
@@ -44,7 +49,6 @@ function createCard(pet, tag) {
 
     tag.append(card);
 }
-
 //Постановка лайка, отправка обновленных данных на сервер и запись в локальное хранилище
 function setLike(el, id, like) {
     el.classList.toggle("fa-solid");
@@ -68,5 +72,36 @@ function setLike(el, id, like) {
                 });
                 localStorage.setItem("three-cats", JSON.stringify(pets));
             })
+    }
+}
+
+//Просмотр информации о коте
+function openCard(name, imgUrl, age, info, pet) {
+    editForm.querySelector("#name").value = name.innerText;
+    editForm.querySelector("#image").value = `${imgUrl}`;
+    editForm.querySelector(".preview").style.backgroundImage = `URL(${imgUrl})`;
+    editForm.querySelector("#age").value = age ? age : "";
+    editForm.querySelector("#info").value = info ? info : "";
+    editForm.querySelector("#favorite").checked = pet[editForm.querySelector("#favorite").name];
+};
+
+// //  и ее редактирование
+// function editCard(){
+
+// }
+
+1
+function textAge(age) {
+    if (age % 100 >= 5 && age % 100 <= 20) {
+        return age + ' лет';
+    } else {
+        age % 100 == age % 100 % 10;
+        if (age % 100 == 1) {
+            return age + ' год';
+        } else if (age % 100 >= 2 && age % 100 <= 4) {
+            return age + ' года';
+        } else {
+            return age + ' лет';
+        }
     }
 }

@@ -1,4 +1,4 @@
-.wrapper {
+.cards-block {
     min-height: 100vh;
     padding: 30px;
     margin: auto;
@@ -22,12 +22,22 @@
     position: relative;
 }
 
+.cat-age{
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    color: #034ff9;
+    margin: 0;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
 .card .like {
     position: absolute;
     right: 8px;
     bottom: 8px;
     font-size: 1.3rem;
-    color: #df3c00;
+    color: #0a59e9;
     cursor: pointer;
 }
 
@@ -41,14 +51,13 @@
     left: 8px;
     bottom: 8px;
     font-size: 1.3rem;
-    color: #df3c0085;
+    color: #0a59e9ad;
     cursor: pointer;
 }
 
 .card-trash:hover, .card-edit:hover {
-    color: #df3c00;
+    color: #0a59e9;
     transform: scale(1.1, 1.1);
-
 }
 
 .card-edit{
@@ -56,12 +65,12 @@
     left: 34px;
     bottom: 8px;
     font-size: 1.3rem;
-    color: #df3c0085;
+    color: #0a59e9ad;
     cursor: pointer;
 }
 
 .card .pic {
-    height: 300px;
+    height: 330px;
     width: 100%;
     background-color:  #fff;
     background-image: url(https://www.kinometro.ru/res/pic/data/news/9580.jpg);
