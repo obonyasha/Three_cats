@@ -45,8 +45,8 @@
                         <input type="checkbox" id="favorite" name="favorite">
                         <label for="favorite" class="custom-checkbox">Любимчик</label>
                         <div class="form-group">
-                            <label for="info">О котике</label>
-                            <textarea type="text" placeholder="Описание" id="info" name="info"
+                            <label for="description">О котике</label>
+                            <textarea type="text" placeholder="Описание" id="description" name="description"
                                 class="form-text"></textarea>
                         </div>
                         <button type="submit" class="form-submit">Добавить</button>
@@ -61,8 +61,12 @@
                     <h2>Изменить данные котика</h2>
                     <form name="edit">
                         <div class="form-group">
+                            <label for="id">ID</label>
+                            <input type="text"  id="id" name="id" readonly>
+                        </div>
+                        <div class="form-group">
                             <label for="name">Имя</label>
-                            <input type="text" placeholder="Коржик" id="name" name="name">
+                            <input type="text"  id="name" name="name">
                         </div>
                         <div class="form-group">
                             <label for="image">Изображение</label>
@@ -73,13 +77,11 @@
                             <label for="age">Возраст</label>
                             <input type="number" placeholder="" min="1" id="age" name="age">
                         </div>
-                        <input type="checkbox" id="favorite" name="favorite" checked hidden>
-                        <label for="favorite" class="custom-checkbox">
-                            Любимчик
-                        </label>
+                        <input type="checkbox" id="favorite" name="favorite">
+                        <label for="favorite" class="custom-checkbox">Любимчик</label>
                         <div class="form-group">
                             <label for="info">О котике</label>
-                            <textarea type="text" placeholder="Описание" id="info" name="info"
+                            <textarea type="text" placeholder="Описание" id="description" name="description"
                                 class="form-text"></textarea>
                         </div>
                         <button type="submit" class="form-submit">Изменить</button>

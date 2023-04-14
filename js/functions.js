@@ -38,17 +38,14 @@ function createCard(pet, tag) {
     edit.className = "fa-solid fa-pen-to-square card-edit";
     edit.addEventListener("click", e => {
         editBox.classList.toggle("active");
-        openCard(cardTitle, pet.image, pet.age, pet.info, pet);
+        openCard(cardTitle, pet.image, pet.age, pet.description, pet);
     });
 
     card.append(cardImg, cardTitle, cardLike, trash, edit, cardAge);
 
-    // card.addEventListener("click", (event) => {
-    //     deleteCard(pet.id, card)
-    // });
-
     tag.append(card);
 }
+
 //Постановка лайка, отправка обновленных данных на сервер и запись в локальное хранилище
 function setLike(el, id, like) {
     el.classList.toggle("fa-solid");
@@ -77,20 +74,15 @@ function setLike(el, id, like) {
 
 //Просмотр информации о коте
 function openCard(name, imgUrl, age, info, pet) {
+    editForm.querySelector("#id").value = pet.id;
     editForm.querySelector("#name").value = name.innerText;
     editForm.querySelector("#image").value = `${imgUrl}`;
     editForm.querySelector(".preview").style.backgroundImage = `URL(${imgUrl})`;
     editForm.querySelector("#age").value = age ? age : "";
-    editForm.querySelector("#info").value = info ? info : "";
+    editForm.querySelector("#description").value = info ? info : "";
     editForm.querySelector("#favorite").checked = pet[editForm.querySelector("#favorite").name];
 };
 
-// //  и ее редактирование
-// function editCard(){
-
-// }
-
-1
 function textAge(age) {
     if (age % 100 >= 5 && age % 100 <= 20) {
         return age + ' лет';

@@ -4,29 +4,26 @@
     align-items: center;
     justify-content: space-between;
     width: 95%;
-    /* padding: 20 px; */
+    height: auto;
     background: transparent;
     z-index: 1;
     transition: 0.25s ease;
 }
 
 .header__scrolled{
-    position: fixed;
+    position: sticky;
     top: 0;
     left: 0;
     right: 0;
     background-image: url('/img/Фон\ лапки.jpg');
-    opacity: 0.8;
+    opacity: 0.9;
     box-shadow: 0 12px 34px -11px rgb(65 62 101 / 10%);
   }
 
 .add-cat {
-    /* position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 10; */
     border-radius: 50px;
 }
+
 .header-logo{
     width: 200px;
     height: auto;
