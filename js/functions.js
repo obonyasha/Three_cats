@@ -74,13 +74,13 @@ function setLike(el, id, like) {
 
 //Просмотр информации о коте
 function openCard(name, imgUrl, age, info, pet) {
-    editForm.querySelector("#id").value = pet.id;
-    editForm.querySelector("#name").value = name.innerText;
-    editForm.querySelector("#image").value = `${imgUrl}`;
+    editForm.querySelector("#edit-id").value = pet.id;
+    editForm.querySelector("#edit-name").value = name.innerText;
+    editForm.querySelector("#edit-image").value = `${imgUrl}`;
     editForm.querySelector(".preview").style.backgroundImage = `URL(${imgUrl})`;
-    editForm.querySelector("#age").value = age ? age : "";
-    editForm.querySelector("#description").value = info ? info : "";
-    editForm.querySelector("#favorite").checked = pet[editForm.querySelector("#favorite").name];
+    editForm.querySelector("#edit-age").value = age ? age : "";
+    editForm.querySelector("#edit-description").value = info ? info : "";
+    editForm.querySelector("#edit-favorite").checked = pet.favorite;
 };
 
 function textAge(age) {

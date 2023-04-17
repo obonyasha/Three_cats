@@ -85,6 +85,7 @@ function deleteCard(id, el) {
 editForm.addEventListener("submit", e => {
     e.preventDefault();
     const body = {};
+    const idCat = editForm.elements.id.value;
     for (let i = 0; i < editForm.elements.length; i++) {
         const el = editForm.elements[i];
         if (el.name) {
@@ -95,7 +96,7 @@ editForm.addEventListener("submit", e => {
             }
         }
     }
-    fetch(`${path}/update/${editForm.elements.id.value}`, {
+    fetch(`${path}/update/${idCat}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json"
@@ -105,14 +106,14 @@ editForm.addEventListener("submit", e => {
         .then(res => {
             if (res.status === 200) {
                 editBox.classList.remove("active");
-                fetch(path + "/show")
-                    .then(res => res.json())
-                    .then(data => {
-                        console.log(data);
-                        pets = [...data];
-                        localStorage.setItem("three-cats", JSON.stringify(pets));
-                        location.reload();
-                    })
+                fetch(`${path}/show/${idCat}`)
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data, data.id);
+                    Object.assign(pets.find(item => item.id === data.id), data);
+                    localStorage.setItem("three-cats", JSON.stringify(pets));
+                    location.reload();
+                })
             }
         })
 })

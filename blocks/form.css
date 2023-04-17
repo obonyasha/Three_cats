@@ -9,7 +9,7 @@ form {
 }
 
 .form-submit {
-    background-color:#0a59e9c2;
+    background-color: #0a59e9c2;
     border: none;
     outline: none;
     color: #fff;
@@ -41,7 +41,7 @@ textarea {
     font: inherit;
 }
 
-.form-text{
+.form-text {
     height: 4.5rem;
 }
 
@@ -57,11 +57,12 @@ label {
     grid-template-columns: 10% 90%;
 }
 
-input[type="checkbox"] {
+.checkbox-add, .checkbox-edit {
     display: none;
-  }
+}
 
-.custom-checkbox {
+.custom-checkbox_add,
+.custom-checkbox_edit {
     display: inline-flex;
     align-items: center;
     user-select: none;
@@ -69,7 +70,8 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
-.custom-checkbox::before {
+.custom-checkbox_add::before,
+.custom-checkbox_edit::before {
     content: "";
     display: inline-block;
     width: 24px;
@@ -83,12 +85,15 @@ input[type="checkbox"] {
     background-image: url('/img/heart_favourite_like.png');
     background-size: contain;
     background-repeat: no-repeat;
- } 
+}
 
-input[type="checkbox"]:checked+.custom-checkbox::before {
+.checkbox-add:checked+.custom-checkbox_add::before {
     background-image: url('/img/icons8-красное-сердце-48.png');
-    background-repeat: no-repeat;
- } 
+}
+
+.checkbox-edit:checked+.custom-checkbox_edit::before {
+    background-image: url('/img/icons8-красное-сердце-48.png');
+}
 
 .preview {
     height: 260px;
